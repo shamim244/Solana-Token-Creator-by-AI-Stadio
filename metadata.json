@@ -1,0 +1,5 @@
+{
+  "name": "Solana Forge",
+  "description": "A professional-grade Solana SPL Token creation tool featuring metadata management, authority toggles, and simulated Irys storage integration.",
+  "requestFramePermissions": []
+}
