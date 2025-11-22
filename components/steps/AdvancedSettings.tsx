@@ -2,6 +2,7 @@
 import React from 'react';
 import { Input } from '../ui/Input';
 import { Toggle } from '../ui/Toggle';
+import { TagInput } from '../ui/TagInput';
 import { PriceBadge } from '../ui/PriceBadge';
 import { TokenFormState } from '../../types';
 import { Globe, Hash, ShieldAlert, User } from 'lucide-react';
@@ -60,11 +61,11 @@ export const AdvancedSettings: React.FC<AdvancedSettingsProps> = ({ formData, on
           <Hash size={20} className="text-solana-purple" />
           {tags.title} <span className="text-xs text-gray-500 font-normal">{tags.subtitle}</span>
         </h3>
-        <Input
+        <TagInput
           label={tags.label}
           placeholder={tags.placeholder}
           value={formData.tags}
-          onChange={(e) => onChange({ tags: e.target.value })}
+          onChange={(newTags) => onChange({ tags: newTags })}
         />
       </div>
 

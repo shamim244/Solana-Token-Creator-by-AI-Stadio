@@ -90,7 +90,7 @@ export const CreateToken: React.FC<CreateTokenProps> = ({ wallet, network }) => 
           twitter: formData.twitter,
           telegram: formData.telegram,
           discord: formData.discord,
-          tags: formData.tags.split(',').map(t => t.trim()).filter(t => t)
+          tags: formData.tags // Already an array
         }
       });
 

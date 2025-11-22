@@ -14,10 +14,8 @@ export const Review: React.FC<ReviewProps> = ({ formData }) => {
   const { review } = CONTENT.createToken;
   const { summary } = review;
 
-  // Safely parse tags
-  const parsedTags = formData.tags
-    ? formData.tags.split(',').map(t => t.trim()).filter(t => t.length > 0)
-    : [];
+  // Tags are already an array now
+  const tags = formData.tags || [];
 
   // Use centralized calculation
   const totalCost = calculateTotalFees(formData);
@@ -82,7 +80,7 @@ export const Review: React.FC<ReviewProps> = ({ formData }) => {
           </div>
 
           {/* Socials & Tags */}
-          {(formData.website || formData.twitter || formData.telegram || formData.discord || parsedTags.length > 0) && (
+          {(formData.website || formData.twitter || formData.telegram || formData.discord || tags.length > 0) && (
              <div className="p-4 border-b dark:border-gray-800 border-gray-200 dark:bg-[#111216] bg-gray-50">
                <span className="text-gray-500 block mb-2 text-xs uppercase font-bold">{review.metadataSection}</span>
                <div className="flex flex-wrap gap-3">
@@ -91,9 +89,9 @@ export const Review: React.FC<ReviewProps> = ({ formData }) => {
                   {formData.telegram && <span className="bg-blue-400/20 text-blue-500 px-2 py-1 rounded text-xs flex items-center gap-1"><MessageCircle size={10}/> Telegram</span>}
                   {formData.discord && <span className="bg-indigo-500/20 text-indigo-500 px-2 py-1 rounded text-xs flex items-center gap-1">Discord</span>}
                </div>
-               {parsedTags.length > 0 && (
+               {tags.length > 0 && (
                  <div className="mt-2 flex flex-wrap gap-1">
-                   {parsedTags.map(t => (
+                   {tags.map(t => (
                      <span key={t} className="text-xs text-gray-500 dark:text-gray-400 dark:bg-gray-800/50 bg-gray-200 px-2 py-0.5 rounded-full">#{t}</span>
                    ))}
                  </div>

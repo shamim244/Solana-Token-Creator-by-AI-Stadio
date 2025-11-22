@@ -29,7 +29,12 @@ export const Faq: React.FC = () => {
   );
 };
 
-const FaqItem = ({ question, answer }: { question: string, answer: string }) => {
+interface FaqItemProps {
+  question: string;
+  answer: string;
+}
+
+const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (

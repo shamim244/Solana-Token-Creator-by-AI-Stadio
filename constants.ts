@@ -1,3 +1,4 @@
+
 import { TokenFormState, Network } from './types';
 
 // --- PRICING CONFIGURATION ---
@@ -44,7 +45,7 @@ export const DEFAULT_FORM_STATE: TokenFormState = {
   twitter: '',
   telegram: '',
   discord: '',
-  tags: '',
+  tags: [],
   creatorAddress: '',
 
   // Authorities

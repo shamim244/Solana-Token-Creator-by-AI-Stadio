@@ -23,7 +23,7 @@ export interface TokenFormState {
   twitter: string;
   telegram: string;
   discord: string;
-  tags: string; // Comma separated string
+  tags: string[]; // Changed to array
   creatorAddress: string;
 
   // Authorities

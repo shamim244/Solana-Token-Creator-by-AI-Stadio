@@ -123,7 +123,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   );
 };
 
-const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => (
   <div className="p-6 dark:bg-[#0B0C10] bg-white border dark:border-gray-800 border-gray-200 rounded-xl hover:border-gray-400 dark:hover:border-gray-600 transition-colors group shadow-sm">
     <div className="w-12 h-12 dark:bg-gray-900 bg-gray-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
       {React.cloneElement(icon as React.ReactElement<any>, { size: 24 })}

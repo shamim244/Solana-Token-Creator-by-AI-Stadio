@@ -1,4 +1,5 @@
 
+
 export const CONTENT = {
   appName: "Solana Forge",
   appNameHighlight: "Forge",
@@ -180,8 +181,8 @@ export const CONTENT = {
       tags: {
         title: "Tags",
         subtitle: "(Optional)",
-        label: "Tags (comma separated)",
-        placeholder: "e.g. DeFi, Meme, Utility, Gaming"
+        label: "Tags",
+        placeholder: "e.g. DeFi, Meme (Press Enter)"
       },
       creator: {
         title: "Custom Creator Address",
